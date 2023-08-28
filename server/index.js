@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -8,6 +8,7 @@ import corsOptions from "./config/cors.js";
 import connectDB from "./config/database.js";
 import credentials from "./middleware/credentials.js";
 import errorHandlerMiddleware from "./middleware/error_handler.js";
+import authenticationMiddleware from "./middleware/authentication.js";
 import { authRouter } from "./routes/api/auth.js";
 
 const __dirname = path.resolve();
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/static", express.static(path.join(__dirname, "public")));
+app.use(authenticationMiddleware);
 app.use(errorHandlerMiddleware);
 
 app.use("/api/auth", authRouter);

@@ -47,6 +47,12 @@ const UserSchema = Schema(
           return this.first_name + " " + this.last_name;
         },
       },
+      id: {
+        get() {
+          this._id;
+        },
+      },
+      timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
     },
   }
 );
