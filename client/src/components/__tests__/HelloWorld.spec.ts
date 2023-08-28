@@ -1,11 +1,14 @@
-import { describe, it, expect } from 'vitest'
-
+import { describe, test, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import HelloWorld from '../HelloWorld.vue'
+import Vuetify from '@/plugins/vuetify'
+import HomeView from '@/views/HomeView.vue'
+
+global.ResizeObserver = require('resize-observer-polyfill')
 
 describe('HelloWorld', () => {
-  it('renders properly', () => {
-    const wrapper = mount(HelloWorld, { props: { msg: 'Hello Vitest' } })
-    expect(wrapper.text()).toContain('Hello Vitest')
+  test('displays message', () => {
+    const view = mount(HomeView, { global: { plugins: [Vuetify] } })
+    console.log(view.html())
+    expect(view.text()).toContain('Main Content')
   })
 })
