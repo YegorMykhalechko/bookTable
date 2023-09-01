@@ -1,12 +1,12 @@
 <template>
-  <v-container class="text-center">
+  <VContainer class="text-center">
     <h1>Home</h1>
-    <v-btn class="pa-3" to="/login">Go To Login</v-btn>
+    <!-- <VBtn class="pa-3" to="/login">Go To Login</VBtn>
     <br />
-    <v-btn class="pa-3" to="/register">Go To Register</v-btn>
+    <VBtn class="pa-3" to="/register">Go To Register</VBtn>
     <br />
-    <v-btn color="primary" class="ma-3" to="/user">Go To Profile</v-btn>
-  </v-container>
+    <VBtn color="primary" class="ma-3" to="/user">Go To Profile</VBtn> -->
+  </VContainer>
 </template>
 
 <script setup lang="ts"></script>

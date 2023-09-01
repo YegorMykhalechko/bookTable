@@ -6,12 +6,33 @@ export default defineComponent({
 })
 </script>
 
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth'
+import { useRouter } from 'vue-router'
+
+const authStore = useAuthStore()
+const router = useRouter()
+
+const logout = async () => {
+  await authStore
+    .logoutAction()
+    .then((res) => {
+      router.replace({ name: 'home' })
+    })
+    .catch((err) => {
+      console.log(err.message)
+    })
+}
+</script>
+
 <template>
-  <v-layout>
-    <v-app-bar color="grey-lighten-2"></v-app-bar>
-    <v-navigation-drawer color="grey-darken-2" permanent></v-navigation-drawer>
-    <v-main>
+  <VLayout>
+    <VAppBar color="grey-lighten-2">
+      <v-btn icon @click="logout"> Logout </v-btn>
+    </VAppBar>
+    <VNavigationDrawer color="grey-darken-2" permanent></VNavigationDrawer>
+    <VMain>
       <slot></slot>
-    </v-main>
-  </v-layout>
+    </VMain>
+  </VLayout>
 </template>

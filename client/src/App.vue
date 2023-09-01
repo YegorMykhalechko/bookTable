@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <v-app id="app">
+  <VApp id="app">
     <TheAppLayout />
-  </v-app>
+  </VApp>
 </template>
 
 <style scoped></style>

@@ -1,15 +1,18 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import DefaultNavbar from '@/components/DefaultNavbar.vue'
 
 export default defineComponent({
-  name: 'TheDefaultLayout'
+  name: 'TheDefaultLayout',
+  components: { DefaultNavbar }
 })
 </script>
 
 <template>
-  <v-layout>
-    <v-main>
+  <VLayout>
+    <DefaultNavbar />
+    <VMain>
       <slot></slot>
-    </v-main>
-  </v-layout>
+    </VMain>
+  </VLayout>
 </template>

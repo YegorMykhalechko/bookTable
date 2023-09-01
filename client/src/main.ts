@@ -9,13 +9,16 @@ import Vuetify from '@/plugins/vuetify'
 import 'vuetify/styles'
 
 import { registerLayouts } from '@/plugins/globalRegisterComponent'
+import { authentication } from '@/plugins/authentication'
 
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(router)
 app.use(Vuetify)
 
 registerLayouts(app)
 
-app.mount('#app')
+authentication.install().then(() => {
+  app.use(router)
+  app.mount('#app')
+})

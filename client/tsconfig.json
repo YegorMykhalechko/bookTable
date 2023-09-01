@@ -1,4 +1,6 @@
 {
+  "files": ["vee-validate.d.ts"],
+  "include": ["src/**/*.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
