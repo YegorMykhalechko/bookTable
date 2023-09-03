@@ -63,7 +63,7 @@ const submit = handleSubmit(async (values: LoginData) => {
       router.replace({ name: 'user' })
     })
     .catch((error) => {
-      errorMessage.value = error.message
+      errorMessage.value = error
       console.log(errorMessage.value)
     })
   handleReset()

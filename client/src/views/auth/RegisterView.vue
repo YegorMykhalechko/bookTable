@@ -121,7 +121,7 @@ const submit = handleSubmit(async (values: RegisterData) => {
       router.push('/login')
     })
     .catch((error) => {
-      errorMessage.value = error.message
+      errorMessage.value = error
       console.log(errorMessage.value)
     })
   handleReset()

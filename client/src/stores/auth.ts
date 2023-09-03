@@ -36,7 +36,7 @@ export const useAuthStore = defineStore('auth', () => {
       await getUserAction()
       return data
     } catch (error: Error | any) {
-      throw error.response.message
+      throw error.response.data.message
     }
   }
 
@@ -46,7 +46,7 @@ export const useAuthStore = defineStore('auth', () => {
       user.value = data
       return data
     } catch (error: Error | any) {
-      throw error.response.message
+      throw error.response.data.message
     }
   }
 
@@ -57,7 +57,7 @@ export const useAuthStore = defineStore('auth', () => {
       user.value = null
       return data
     } catch (error: Error | any) {
-      throw error.response.message
+      throw error.response.data.message
     }
   }
 
@@ -67,7 +67,7 @@ export const useAuthStore = defineStore('auth', () => {
       user.value = data
       return data
     } catch (error: Error | any) {
-      throw error.response.message
+      throw error.response.data.message
     }
   }
 
