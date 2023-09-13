@@ -7,6 +7,7 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
+import DashboardNavbar from '@/components/DashboardNavbar.vue'
 import { useAuthStore } from '@/stores/auth'
 import { useRouter } from 'vue-router'
 
@@ -27,9 +28,7 @@ const logout = async () => {
 
 <template>
   <VLayout>
-    <VAppBar color="grey-lighten-2">
-      <v-btn icon @click="logout"> Logout </v-btn>
-    </VAppBar>
+    <DashboardNavbar />
     <VNavigationDrawer color="grey-darken-2" permanent></VNavigationDrawer>
     <VMain>
       <slot></slot>
